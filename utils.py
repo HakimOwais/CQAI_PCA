@@ -2,6 +2,8 @@ import streamlit as st
 import cv2
 import os
 from sklearn.decomposition import PCA, KernelPCA
+import base64
+import numpy as np 
 
 # Cache the directory listing to avoid repeated I/O operations
 @st.cache_resource
@@ -24,3 +26,8 @@ def apply_kernel_pca(channel, components, kernel="rbf"):
     transformed = kpca.fit_transform(channel)
     return kpca.inverse_transform(transformed)
 
+# Function to convert image to base64 string for JSON response
+def image_to_base64(image: np.ndarray):
+    _, im_buf_arr = cv2.imencode('.png', image)
+    byte_im = im_buf_arr.tobytes()
+    return base64.b64encode(byte_im).decode('utf-8')
