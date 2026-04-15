@@ -1,5 +1,5 @@
 setuptools>=42.0.0
-streamlit==1.37.0
+streamlit==1.54.0
 numpy==1.23.5
 Pillow==12.2.0
 matplotlib==3.5.1
