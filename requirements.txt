@@ -1,7 +1,7 @@
 setuptools>=42.0.0
 streamlit==1.37.0
 numpy==1.23.5
-Pillow==10.3.0
+Pillow==12.1.1
 matplotlib==3.5.1
 opencv-python-headless==4.8.1.78
 scikit-learn==1.5.0
